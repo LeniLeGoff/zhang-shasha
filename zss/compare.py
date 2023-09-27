@@ -171,8 +171,8 @@ def simple_distance(A, B, get_children=Node.get_children,
     """
     return distance(
         A, B, get_children,
-        insert_cost=lambda node: label_dist('', get_label(node)),
-        remove_cost=lambda node: label_dist(get_label(node), ''),
+        insert_cost=lambda node: label_dist(None, get_label(node)),
+        remove_cost=lambda node: label_dist(get_label(node), None),
         update_cost=lambda a, b: label_dist(get_label(a), get_label(b)),
         return_operations=return_operations
     )
